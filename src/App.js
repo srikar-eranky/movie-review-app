@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './navbar';
 import './navbar.css'
+import MovieComponent from './movie';
 
 export function App() {
   return (
@@ -21,6 +22,37 @@ export function App() {
           Learn React
         </a>
       </header>
+      <div className='movie-component'>
+        <div className='row'>
+          <div className='column'>
+            <MovieComponent />
+            <MovieComponent />
+            <MovieComponent />
+            <MovieComponent />
+          </div>
+
+          <div className='column'>
+            <MovieComponent />
+            <MovieComponent />
+            <MovieComponent />
+            <MovieComponent />
+          </div>
+
+          <div className='column'>
+            <MovieComponent />
+            <MovieComponent />
+            <MovieComponent />
+            <MovieComponent />
+          </div>
+
+          <div className='column'>
+            <MovieComponent />
+            <MovieComponent />
+            <MovieComponent />
+            <MovieComponent />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
