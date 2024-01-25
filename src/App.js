@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './navbar';
+import './navbar.css'
 
-function App() {
+export function App() {
   return (
     <div className="App">
+      <NavBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
