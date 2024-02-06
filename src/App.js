@@ -3,13 +3,22 @@ import './App.css';
 import NavBar from './navbar';
 import './navbar.css'
 import MovieComponent from './movie';
+import  { useEffect, useState } from 'react';
 
 export function App() {
-  function handleClick(){
-    alert("Button clicked!");
-  }
+  const [movies, setMovie] = useState([]);
 
-  const element = <button onClick={handleClick}>Click me</button>
+  function addMovie(){
+    const newMovie = {
+      id: movies.length + 1,
+      title: 'New Movie',
+      img: {logo}
+    }
+    setMovie([...movies, newMovie]);
+  };
+
+
+  const element = <button onClick={addMovie}>Add a movie</button>
   return (
     <div className="App">
       <NavBar />
@@ -34,64 +43,13 @@ export function App() {
       {element}
       <div className='movie-component'>
         <div className='row'>
+          {movies.map((movie) => (
+              <MovieComponent key={movie.id} movie={movie} />
+            ))}
           <div className='column'>
-            <MovieComponent 
-              image={logo}
-              title="React Movie"/>
-            <MovieComponent 
-              image={logo}
-              title="Beauty and the Beast"/>
-            <MovieComponent 
-              image={logo}
-              title="Top Gun"/>
-            <MovieComponent 
-              image={logo}
-              title="Good Will Hunting"/>
-          </div>
-
-          <div className='column'>
-            <MovieComponent 
-              image={logo}
-              title="Dune"/>
-            <MovieComponent
-              image={logo}
-              title="The Lion King" />
-            <MovieComponent 
-              image={logo}
-              title = "Star Wars"/>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
-          </div>
-
-          <div className='column'>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
-          </div>
-
-          <div className='column'>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
-            <MovieComponent 
-              image={logo}
-              title = "Interstellar"/>
+            {movies.map((movie) => (
+              <MovieComponent key={movie.id} movie={movie} />
+            ))}
           </div>
         </div>
       </div>

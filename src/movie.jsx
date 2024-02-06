@@ -2,10 +2,13 @@ import React from "react";
 import './main-component.css'
 import logo from './logo.svg'
 
-const MovieComponent = (props) => {
+const MovieComponent = ({movie}) => {
     return (
-        <><img src={props.image}></img>
-        <h3>{props.title}</h3></>
+        <div>
+            <img src={movie.image}></img>
+            <h3>{movie.title}</h3>
+            <p>Movie ID: {movie.id}</p>
+        </div>
     )
 }
 
